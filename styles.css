@@ -333,13 +333,13 @@ footer {
   margin-bottom: 34px;
 }
 
-.service-grid {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
-.service-grid article {
+.card-grid article {
   min-height: 230px;
   padding: 26px;
   border: 1px solid var(--line);
@@ -347,8 +347,47 @@ footer {
   background: var(--cream);
 }
 
-.service-grid p,
-.contact p {
+.card-grid p,
+.newsletter p,
+.lookbook p,
+.page p {
+  color: var(--muted);
+}
+
+.card-kicker,
+.article-meta {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--coral);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.feature-section {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(28px, 5vw, 72px);
+  background: var(--cream);
+}
+
+.article-list {
+  display: grid;
+  gap: 1px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.article-list article {
+  padding: 24px;
+  background: var(--paper);
+}
+
+.article-list p:last-child {
+  margin-bottom: 0;
   color: var(--muted);
 }
 
@@ -375,15 +414,35 @@ footer {
 .swatch.plum { background: var(--plum); }
 .swatch.ink { background: var(--ink); }
 
-.contact {
+.newsletter {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  padding: clamp(44px, 7vw, 92px) clamp(20px, 6vw, 86px);
 }
 
-.contact > div {
+.newsletter > div {
   max-width: 720px;
+}
+
+.page {
+  max-width: 920px;
+  padding: clamp(58px, 8vw, 118px) clamp(20px, 6vw, 86px);
+}
+
+.page h1 {
+  font-size: clamp(3.2rem, 8vw, 7rem);
+}
+
+.page p {
+  font-size: 1.12rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 footer {
@@ -401,7 +460,7 @@ footer p {
 
 @media (max-width: 850px) {
   .site-header,
-  .contact,
+  .newsletter,
   footer {
     align-items: flex-start;
     flex-direction: column;
@@ -413,7 +472,8 @@ footer p {
 
   .hero,
   .lookbook,
-  .service-grid {
+  .card-grid,
+  .feature-section {
     grid-template-columns: 1fr;
   }
 
@@ -440,7 +500,7 @@ footer p {
     box-shadow: 12px 14px 0 rgba(82, 98, 58, 0.18);
   }
 
-  .service-grid article {
+  .card-grid article {
     min-height: 0;
   }
 }
